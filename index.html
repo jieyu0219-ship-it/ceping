@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="跨国交友防骗自查：15 个问题，自动算出绿灯、黄灯还是红灯。by May · 寰宇之恋">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>他靠得住吗？跨国交友防骗自查 | 寰宇之恋</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;900&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+/* Layout: one narrow phone column; start → questions (one per screen) → result report card */
+:root{
+  --bg:#F5F3F8; --paper:#FFFFFF; --ink:#211A2E; --muted:#6E667C; --line:#E4DFEC;
+  --plum:#6425D0; --plum-soft:#EEE7FB; --on-plum:#FFFFFF;
+  --green:#1E8A4C; --green-soft:#E3F3EA; --amber:#B7790B; --amber-soft:#FBF0D9; --red:#C2362F; --red-soft:#FBE5E3;
+  --display:"Noto Serif SC","Songti SC","STSong",serif;
+  --body:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#17131F; --paper:#221C2D; --ink:#EEE9F5; --muted:#A79FB5; --line:#352D43;
+  --plum:#A57CF2; --plum-soft:#2E2442; --on-plum:#17131F;
+  --green:#5CC98A; --green-soft:#1C3326; --amber:#E7B04A; --amber-soft:#3A2E17; --red:#F07A72; --red-soft:#3D1F1D; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17131F; --paper:#221C2D; --ink:#EEE9F5; --muted:#A79FB5; --line:#352D43;
+  --plum:#A57CF2; --plum-soft:#2E2442; --on-plum:#17131F;
+  --green:#5CC98A; --green-soft:#1C3326; --amber:#E7B04A; --amber-soft:#3A2E17; --red:#F07A72; --red-soft:#3D1F1D; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 40px}
+.wrap{max-width:440px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.3}
+p{margin:0}
+.brand{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px;letter-spacing:.08em}
+.brand b{color:var(--plum);font-weight:700}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px}
+button{font:inherit;cursor:pointer;border:0}
+button:focus-visible,a:focus-visible{outline:3px solid var(--plum);outline-offset:2px}
+.btn{display:block;width:100%;padding:14px 18px;border-radius:999px;background:var(--plum);color:var(--on-plum);font-weight:700;font-size:17px;text-align:center;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--plum);border:1.5px solid var(--plum)}
+.row{display:flex;gap:10px}
+.row>*{flex:1;min-width:0}
+
+/* start */
+.hero h1{font-size:34px;font-weight:900}
+.hero .sub{color:var(--muted);margin-top:6px}
+.lights{display:flex;gap:8px;margin:18px 0 4px}
+.lights span{width:14px;height:14px;border-radius:50%}
+.from{border-top:1px solid var(--line);margin-top:18px;padding-top:14px;font-size:14px;color:var(--muted)}
+.meta{display:flex;gap:16px;font-size:13px;color:var(--muted)}
+
+/* quiz */
+.progress{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--plum);transition:width .25s}
+.qhead{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.qtext{font-family:var(--display);font-size:22px;font-weight:600;line-height:1.45;min-height:3em}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:16px;text-align:left;color:var(--ink);font-size:17px}
+.opt[aria-pressed="true"]{border-color:var(--plum);background:var(--plum-soft)}
+.back{background:none;color:var(--muted);font-size:14px;padding:6px 0;align-self:flex-start}
+
+/* result */
+#report{background:var(--paper);border-radius:16px;border:1px solid var(--line);overflow:hidden}
+.verdict{padding:22px 20px 18px;display:flex;flex-direction:column;gap:8px}
+.verdict .tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.06em}
+.verdict .tag i{width:12px;height:12px;border-radius:50%;background:currentColor}
+.verdict h2{font-size:28px;font-weight:900}
+.verdict .count{font-size:14px}
+.lv-green .verdict{background:var(--green-soft);color:var(--green)}
+.lv-amber .verdict{background:var(--amber-soft);color:var(--amber)}
+.lv-red .verdict{background:var(--red-soft);color:var(--red)}
+.verdict h2,.verdict p{color:var(--ink)}
+.sec{padding:16px 20px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.sec h3{font-size:17px}
+.sec ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.sig{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:10px;background:var(--bg)}
+.sig b{font-size:15px}
+.sig span{font-size:14px;color:var(--muted)}
+.alert{border-radius:10px;padding:12px 14px;font-size:15px;background:var(--red-soft)}
+.alert b{color:var(--red)}
+.note{font-size:12px;color:var(--muted)}
+.sign{font-size:13px;color:var(--muted);text-align:right}
+
+/* offer */
+.offer{border:1.5px solid var(--plum);background:var(--paper)}
+.offer .eyebrow{font-size:12px;letter-spacing:.12em;color:var(--plum);font-weight:700}
+.offer h3{font-size:22px;margin-top:4px}
+.offer ul{margin:10px 0 14px;padding-left:1.2em}
+.price{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
+.price b{font-family:var(--display);font-size:36px;color:var(--plum);font-variant-numeric:tabular-nums}
+.price span{font-size:14px;color:var(--muted)}
+.wx{display:flex;gap:14px;align-items:center}
+.wx img{width:112px;height:112px;border-radius:8px;background:#fff;padding:6px;flex:none}
+.wx p{font-size:15px}
+
+/* save overlay */
+#shot{position:fixed;inset:0;background:rgba(15,10,22,.86);z-index:20;display:flex;flex-direction:column;align-items:center;gap:12px;
+  padding:calc(16px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));overflow:auto}
+#shot p{color:#fff;font-size:15px}
+#shot img{max-width:min(420px,100%);border-radius:12px}
+#shot button{background:#fff;color:#211A2E;padding:10px 26px;border-radius:999px;font-weight:700}
+/* price states */
+.pb{display:flex;flex-direction:column;gap:12px}
+.pb .line{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.pb .now{font-family:var(--display);font-size:38px;font-weight:900;color:var(--plum);font-variant-numeric:tabular-nums;line-height:1}
+.pb .was{color:var(--muted);text-decoration:line-through;font-size:16px}
+.pb .chip{font-size:12px;font-weight:700;color:var(--red);background:var(--red-soft);border-radius:6px;padding:2px 8px}
+.pb .timer{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.pb .timer b{font-variant-numeric:tabular-nums;color:var(--red);font-size:18px;letter-spacing:.04em}
+.pb .unlock{background:none;border:1.5px dashed var(--plum);color:var(--plum);border-radius:12px;padding:12px;font-weight:700}
+/* coupon popup */
+.pop{position:fixed;inset:0;z-index:30;background:rgba(20,12,30,.62);display:flex;align-items:center;justify-content:center;
+  padding:calc(16px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.ticket{width:min(340px,100%);border-radius:18px;overflow:hidden;background:var(--paper);animation:popin .35s cubic-bezier(.2,1.4,.4,1)}
+.tk-top{background:var(--plum);color:var(--on-plum);text-align:center;padding:22px 16px 26px;position:relative}
+.tk-top::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:16px;
+  background:radial-gradient(circle at 8px 8px,var(--paper) 7px,transparent 7.5px) 0 0/16px 16px repeat-x}
+.tk-eyebrow{font-size:13px;letter-spacing:.2em;opacity:.85}
+.tk-amt{font-family:var(--display);font-size:68px;font-weight:900;line-height:1.1}
+.tk-amt small{font-size:28px;margin-right:2px}
+.tk-name{font-size:15px;opacity:.95}
+.tk-bottom{padding:22px 20px 16px;display:flex;flex-direction:column;gap:10px;text-align:center}
+.tk-bottom b{color:var(--plum);font-size:20px}
+.tk-rule{font-size:13px;color:var(--muted)}
+.tk-skip{background:none;color:var(--muted);font-size:14px;padding:4px}
+@keyframes popin{from{transform:scale(.85);opacity:0}to{transform:none;opacity:1}}
+/* sticky countdown */
+#cdBar{position:fixed;left:0;right:0;bottom:0;z-index:15;background:var(--ink);color:var(--bg);
+  padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.cd-in{max-width:440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.cd-l{font-size:12px;opacity:.75;display:block}
+.cd-t{font-variant-numeric:tabular-nums;font-size:18px;letter-spacing:.04em}
+.cd-go{background:var(--plum);color:var(--on-plum);text-decoration:none;font-weight:700;padding:10px 16px;border-radius:999px;white-space:nowrap}
+body.has-bar{padding-bottom:90px}
+@media (prefers-reduced-motion: reduce){.progress i{transition:none}.ticket{animation:none}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><b>寰宇之恋</b> · Love Cloud Bridge</div>
+
+  <!-- START -->
+  <section id="start" class="card hero">
+    <h1>他靠得住吗？</h1>
+    <p class="sub">跨国交友防骗自查 · 3 分钟</p>
+    <div class="lights" aria-hidden="true"><span style="background:var(--green)"></span><span style="background:var(--amber)"></span><span style="background:var(--red)"></span></div>
+    <p>想着你正在聊的那个人，回答 15 个问题。做完自动算出绿灯、黄灯还是红灯，并告诉你下一步该怎么做。</p>
+    <p class="from">我是 May，离婚后带着儿子，通过跨国交友在悉尼重新成了家。这一路我见过太多姐妹，不是输给缘分，而是输给骗子。</p>
+    <div class="meta" style="margin:14px 0 16px"><span>15 题</span><span>不用填个人信息</span><span>结果可存图</span></div>
+    <button class="btn" id="go">开始测一测</button>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" hidden>
+    <div class="wrap">
+      <div class="qhead"><span id="qnum">第 1 题</span><span id="qof">1 / 15</span></div>
+      <div class="progress"><i id="bar" style="width:0"></i></div>
+      <div class="card" style="display:flex;flex-direction:column;gap:18px">
+        <p class="qtext" id="qtext"></p>
+        <div class="opts" id="opts"></div>
+      </div>
+      <button class="back" id="prev">← 上一题</button>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <section id="result" hidden>
+    <div class="wrap">
+      <div id="report"></div>
+      <div class="row">
+        <button class="btn" id="save">保存结果图</button>
+        <button class="btn ghost" id="again">再测一次</button>
+      </div>
+
+      <div class="card offer">
+        <div class="eyebrow">想系统学会筛人</div>
+        <h3>《安心出海》8 节视频课</h3>
+        <ul>
+          <li>不被骗钱：杀猪盘的四个阶段，一眼认出</li>
+          <li>不被骗时间：推进时间线和撤退线</li>
+          <li>出去以后不被困住：见面、孩子和钱的三个月原则</li>
+        </ul>
+        <div id="priceBox"></div>
+      </div>
+
+      <div class="card wx">
+        <img alt="May 的微信二维码" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACo0lEQVR42u2cQW6lQAxEnwcklo00B8hR+DeYI0VzpLkBHCUHiATLSI1qFu7+kMkqi1lYMgvEp2tVVtmubvNNfOfafvC9K/GJT/x/xR/WrgdgNp/m7x7HCNsMfX1MPsPhkfZBkiQWVVj2+wKLL0iOW5PPiPgmzmMS20tFqysZ9NsXmrqTz9j407Qek+zBIK2cZq978hMZP355U95N2693YxHAkXzGj+/dJB2TDCbBMSNKBYp6pJPPePjT22NgkCfkZQd7MKg10WZmNiefIfVbnuo9TtP2UvEbfFh/Sj5D+yN/XCRp9eenZ/pnNfkMF19VusNtYQQGQaloLfInj3nGN2p8200rgzyqyw6uYpd4Sf3GzM89jLfQfpZz29NK/cbsr+poywoGpwlA27xjlDoKzlHbSx2VfMbVb8vF+73d8gVK/aTu5DNi/dV6NVQ803WptyBn/Y3eX7XQ7oO7IndKz+Ok9EdR8b5DNcleVbFH+bC2VtQytav7yPPfqPsbPSFfrqgZ3p6a0//G9kctFw9qYbwy9a06Z34O21/5cEaRmnQvwfYknfU3tH77roYLVld/9Wy80h/Frb9f/G/5tF3pLXbOX8WN79VGLbdy3PXrFjnrb0B8n885JrUbdYSyA9RR2/wOHDPmTjj5jBhfccwGYOKYMco5sqzN9RqANhtq8hkwvrcJqxlgqG1S1kDt589qPm6XfEbsn28OqPmjvtOxMvQhjqy/Yfuraxanb2INfr7gJrgdMmR8o9Zf8zTMaVD8wBdb9vMqzGj7lXxGxw9ieZu8q2pfMpQ2n2Ovb3m+ENcf+XUaLl2d5o1Xn+RAUJPPoPhr11na20dIWg8zv+ktvy8LrN+zH/geMwaDbPlzGpTdC7NR5EpOPqPhLf+fIfGJD4v/C+EaVDSVrbWxAAAAAElFTkSuQmCC">
+        <p><b>想让 May 帮你看看他？</b><br>截图扫码加我，备注「测评」，送你一份《见面前必问的验证问题》。</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- coupon popup -->
+<div id="couponPop" class="pop" hidden role="dialog" aria-modal="true" aria-labelledby="cpTitle">
+  <div class="ticket">
+    <div class="tk-top">
+      <p class="tk-eyebrow">测评专属</p>
+      <p class="tk-amt"><small>¥</small>100</p>
+      <p id="cpTitle" class="tk-name">《安心出海》课程优惠券</p>
+    </div>
+    <div class="tk-bottom">
+      <p>课程价 ¥199，用券后只要 <b>¥99</b></p>
+      <p class="tk-rule">领取后 <span id="cpHours"></span> 小时内有效，过期恢复 ¥199</p>
+      <button class="btn" id="claim">立即领取</button>
+      <button class="tk-skip" id="skip">先不要</button>
+    </div>
+  </div>
+</div>
+
+<!-- sticky countdown bar -->
+<div id="cdBar" hidden>
+  <div class="cd-in">
+    <div><span class="cd-l">优惠券剩余</span><b class="cd-t" id="cdBarT">--:--:--</b></div>
+    <a class="cd-go" href="https://jsj.top/f/zOHRtl" target="_blank" rel="noopener">用券 ¥99 报名</a>
+  </div>
+</div>
+
+<div id="shot" hidden>
+  <p>长按图片，保存到相册</p>
+  <img id="shotimg" alt="测评结果图">
+  <button id="shotclose">关闭</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+const Q=[
+ {t:"他的照片像杂志模特，或者用图片搜索能找到同款",w:"照片可能是盗来的。盗图是杀猪盘的第一步。"},
+ {t:"他说自己是海外驻军、军医、石油平台工程师、联合国项目人员或远洋船长",w:"这几种身份最常被冒充：常年在外、不能视频、急需用钱，全都有现成理由。"},
+ {t:"刚聊没几天，他就急着让你换到 WhatsApp、Telegram 等其他软件",w:"离开交友平台，就没有举报和风控，方便他下手。"},
+ {t:"认识不久就说爱你，叫你 wife 或 honey",w:"这是情感轰炸，先让你上头，再让你放下防备。"},
+ {t:"他的年龄、城市、婚史等信息，前后说得不一样",w:"可能同时在聊很多人，或者几个人轮流用一个号。"},
+ {t:"他总有理由不能视频",w:"不肯视频，就没法确认屏幕那头是不是真人。"},
+ {t:"视频过，但总是很短、画面模糊或者他不说话",w:"可能是录好的视频或换脸软件。"},
+ {t:"他主动聊起投资、加密货币、外汇，说可以带你一起赚钱",w:"这是杀猪盘真正收网的环节。",money:true},
+ {t:"他遇到过急事需要钱：包裹被扣、住院、账户冻结、机票差钱等",w:"最典型的要钱剧本。真心的人不会让刚认识的你掏钱。",money:true},
+ {t:"他让你提供验证码、证件照片，或者帮他收款、转款",w:"可能会盗用你的账户，或者让你帮他洗钱，会连累你自己。",money:true},
+ {t:"你提出疑问时，他用愧疚或生气回应，比如「你不信我就是不爱我」",w:"这是情感操控，让你不敢再问。"},
+ {t:"说好要见面，却一再推迟",w:"真心的人会想办法推进，而不是一直找理由。"},
+ {t:"认识超过一个月，他还没说过具体哪个月来见你、谁来、谁付钱",w:"没有具体计划的「以后见面」，可能是在拖你的时间。",time:true},
+ {t:"认识超过三个月，你们还没有见过面",w:"时间越长，你投入越多，越难抽身。",time:true},
+ {t:"你有没有给他转过钱，或者帮他买过东西？",opts:["没有","有"],last:true}
+];
+const LV={
+ green:{name:"绿灯",title:"可以继续了解他",cls:"lv-green",
+   tips:["底线不变：见面之前不转账、不投资、不给验证码和证件","继续用视频确认他是真人，留意说法前后是否一致","给关系定一个时间点，比如三个月内见面"]},
+ amber:{name:"黄灯",title:"放慢节奏，先验证",cls:"lv-amber",
+   tips:["用图片搜索查一下他的照片","临时约一次视频，看他是配合还是找理由","先别投入更多感情，观察你提出疑问时他的反应"]},
+ red:{name:"红灯",title:"暂停投入，钱的事一律不碰",cls:"lv-red",
+   tips:["不转账、不投资、不借钱、不帮他收款","把聊天记录和他的资料截图保存好","找一个信得过的人，把情况讲给她听"]}
+};
+const $=id=>document.getElementById(id);
+let ans=[],i=0;
+function show(id){["start","quiz","result"].forEach(s=>$(s).hidden=s!==id);window.scrollTo(0,0)}
+function render(){
+  const q=Q[i];
+  $("qnum").textContent=`第 ${i+1} 题`;$("qof").textContent=`${i+1} / ${Q.length}`;
+  $("bar").style.width=(i/Q.length*100)+"%";
+  $("qtext").textContent=q.t;
+  const o=$("opts");o.innerHTML="";
+  (q.opts||["是","否"]).forEach((label,k)=>{
+    const b=document.createElement("button");b.className="opt";b.id="opt"+k;b.textContent=label;
+    const val=q.opts?k===1:k===0;
+    b.setAttribute("aria-pressed",ans[i]===val?"true":"false");
+    b.onclick=()=>{ans[i]=val;b.setAttribute("aria-pressed","true");setTimeout(()=>{if(i<Q.length-1){i++;render()}else finish()},160)};
+    o.appendChild(b)});
+  $("prev").hidden=i===0;
+}
+function finish(){
+  const hits=Q.map((q,k)=>({q,k,yes:ans[k]})).filter(x=>!x.q.last&&x.yes);
+  const n=hits.length, money=hits.some(x=>x.q.money), time=hits.some(x=>x.q.time), paid=ans[Q.length-1];
+  const key=(n>=4||money||paid)?"red":n>=2?"amber":"green";
+  const L=LV[key];
+  let why=`前 14 题里，你选了 <b>${n}</b> 个「是」`;
+  if(key==="red"&&n<4) why+=money?"，其中有和钱有关的信号，直接按红灯处理":"，但你已经转过钱，直接按红灯处理";
+  let h=`<div class="${L.cls}"><div class="verdict"><span class="tag"><i></i>${L.name}</span><h2>${L.title}</h2><p class="count">${why}</p></div>`;
+  if(paid) h+=`<div class="sec"><div class="alert"><b>已经转过钱，请马上做三件事：</b>停止再转任何一笔；保存好聊天和转账记录；联系银行，并拨打反诈热线 96110。被骗不是你的错，止损最重要。有人说能帮你追回损失、但要先交费的，几乎都是第二次诈骗。</div></div>`;
+  h+=`<div class="sec"><h3>接下来这样做</h3><ul>${L.tips.map(t=>`<li>${t}</li>`).join("")}</ul></div>`;
+  if(n) h+=`<div class="sec"><h3>你选了「是」的信号</h3>${hits.map(x=>`<div class="sig"><b>${x.k+1}. ${x.q.t}</b><span>${x.q.w}</span></div>`).join("")}</div>`;
+  if(time) h+=`<div class="sec"><h3>小心被拖时间</h3><p>他可能不是在骗你的钱，而是在拖你的时间。给他一个明确的时间点，比如这个月内定下见面日期。做不到，就别把心思都押在他一个人身上。</p></div>`;
+  h+=`<div class="sec"><p class="note">本测评只是风险提示，不能证明对方一定是或不是骗子。</p><p class="sign">—— May · 寰宇之恋</p></div></div>`;
+  $("report").innerHTML=h;$("bar").style.width="100%";show("result");
+}
+$("go").onclick=()=>{ans=[];i=0;render();show("quiz")};
+$("prev").onclick=()=>{if(i>0){i--;render()}};
+$("again").onclick=()=>{ans=[];i=0;show("start")};
+$("save").onclick=async()=>{
+  const btn=$("save");btn.textContent="生成中…";
+  try{
+    const bg=getComputedStyle(document.body).backgroundColor;
+    const c=await html2canvas($("report"),{scale:2,backgroundColor:bg,useCORS:true});
+    $("shotimg").src=c.toDataURL("image/png");$("shot").hidden=false;
+  }catch(e){btn.textContent="生成失败，请直接截屏";return}
+  btn.textContent="保存结果图";
+};
+$("shotclose").onclick=()=>{$("shot").hidden=true};
+
+/* ---------- coupon ---------- */
+const COUPON_HOURS=24;            // 优惠券有效时长（小时）
+const LIST_PRICE=199, OFF=100;
+const FORM_99="https://jsj.top/f/zOHRtl";
+const FORM_199="https://jsj.top/f/F9B7Qx"; // 过期后 ¥199 的报名链接
+const KEY="axch_coupon_claimed_at";
+$("cpHours").textContent=COUPON_HOURS;
+let claimedAt=null, popShown=false, tick=null;
+try{const v=localStorage.getItem(KEY);if(v)claimedAt=+v}catch(e){}
+const left=()=>claimedAt?claimedAt+COUPON_HOURS*3600e3-Date.now():0;
+const fmt=ms=>{const s=Math.max(0,Math.floor(ms/1000));const p=n=>String(n).padStart(2,"0");return `${p(Math.floor(s/3600))}:${p(Math.floor(s%3600/60))}:${p(s%60)}`};
+function state(){return !claimedAt?"none":left()>0?"active":"expired"}
+function drawPrice(){
+  const st=state(), box=$("priceBox");
+  if(st==="none"){
+    box.innerHTML=`<div class="pb"><div class="line"><span class="now">¥${LIST_PRICE}</span><span class="note">课程价</span></div>
+      <button class="unlock" id="openCoupon">🎟 领取测评专属 ¥${OFF} 优惠券</button></div>`;
+    $("openCoupon").onclick=openPop;
+  }else if(st==="active"){
+    box.innerHTML=`<div class="pb"><div class="line"><span class="now">¥${LIST_PRICE-OFF}</span><span class="was">¥${LIST_PRICE}</span><span class="chip">已用券 -¥${OFF}</span></div>
+      <div class="timer">优惠券剩余 <b id="cdCard">${fmt(left())}</b></div>
+      <a class="btn" href="${FORM_99}" target="_blank" rel="noopener">用券 ¥${LIST_PRICE-OFF} 报名</a></div>`;
+  }else{
+    box.innerHTML=`<div class="pb"><div class="line"><span class="now">¥${LIST_PRICE}</span><span class="chip">优惠券已过期</span></div>`+
+      (FORM_199?`<a class="btn" href="${FORM_199}" target="_blank" rel="noopener">报名 ¥${LIST_PRICE}</a>`:`<p class="note">想报名可以加下面的微信，问问 May 有没有新的优惠。</p>`)+`</div>`;
+  }
+  const bar=state()==="active"&&!$("result").hidden;
+  $("cdBar").hidden=!bar;document.body.classList.toggle("has-bar",bar);
+}
+function startTick(){clearInterval(tick);tick=setInterval(()=>{
+  if(state()!=="active"){clearInterval(tick);drawPrice();return}
+  const t=fmt(left());const a=$("cdCard");if(a)a.textContent=t;$("cdBarT").textContent=t;},1000)}
+function openPop(){popShown=true;$("couponPop").hidden=false;$("claim").focus()}
+$("claim").onclick=()=>{claimedAt=Date.now();try{localStorage.setItem(KEY,String(claimedAt))}catch(e){}
+  $("couponPop").hidden=true;drawPrice();startTick();$("cdBarT").textContent=fmt(left())};
+$("skip").onclick=()=>{$("couponPop").hidden=true};
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!popShown&&state()==="none"&&!$("result").hidden)setTimeout(openPop,500)})},{threshold:.4});
+io.observe(document.querySelector(".offer"));
+const _finish=finish;finish=function(){_finish();drawPrice();if(state()==="active")startTick()};
+const _again=$("again").onclick;$("again").onclick=()=>{_again();$("cdBar").hidden=true;document.body.classList.remove("has-bar")};
+</script>
+
+</body>
+</html>
