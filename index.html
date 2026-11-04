@@ -3,120 +3,138 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="跨国交友防骗自查：15 个问题，自动算出绿灯、黄灯还是红灯。by May · 寰宇之恋">
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>他靠得住吗？跨国交友防骗自查 | 寰宇之恋</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="幸福出海准备度评估：15 道题，3 分钟，看看你离幸福出海还差几步。by May · 寰宇之恋">
+<title>幸福出海准备度评估 | 寰宇之恋</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;900&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;900&family=Noto+Sans+SC:wght@400;500;700&family=Great+Vibes&display=swap">
 <style>
-/* Layout: one narrow phone column; start → questions (one per screen) → result report card */
+/* 配色跟 2024 测评海报一致：薰衣草紫 + 香槟金 + 米白 */
 :root{
-  --bg:#F5F3F8; --paper:#FFFFFF; --ink:#211A2E; --muted:#6E667C; --line:#E4DFEC;
-  --plum:#6425D0; --plum-soft:#EEE7FB; --on-plum:#FFFFFF;
-  --green:#1E8A4C; --green-soft:#E3F3EA; --amber:#B7790B; --amber-soft:#FBF0D9; --red:#C2362F; --red-soft:#FBE5E3;
+  --bg:#F1F0F3; --paper:#FFFFFF; --cream:#FBF6EC; --ink:#2C2840; --muted:#6F6A82; --line:#E5E1EA;
+  --plum:#6A6396; --plum-deep:#57507F; --lav:#8D86B2; --lav-soft:#ECEAF6; --on-plum:#FFFFFF;
+  --gold:#9A7433; --gold-line:#D9BF8E; --gold-soft:#F7ECD8;
   --display:"Noto Serif SC","Songti SC","STSong",serif;
   --body:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --script:"Great Vibes","Snell Roundhand",cursive;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#17131F; --paper:#221C2D; --ink:#EEE9F5; --muted:#A79FB5; --line:#352D43;
-  --plum:#A57CF2; --plum-soft:#2E2442; --on-plum:#17131F;
-  --green:#5CC98A; --green-soft:#1C3326; --amber:#E7B04A; --amber-soft:#3A2E17; --red:#F07A72; --red-soft:#3D1F1D; color-scheme:dark}}
+  --bg:#17151F; --paper:#221F2D; --cream:#2A2535; --ink:#EEEBF5; --muted:#A8A2B8; --line:#383246;
+  --plum:#ADA6D8; --plum-deep:#4A4470; --lav:#8D86B2; --lav-soft:#2E2A42; --on-plum:#17151F;
+  --gold:#E2C48E; --gold-line:#8C7344; --gold-soft:#3A3020; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#17131F; --paper:#221C2D; --ink:#EEE9F5; --muted:#A79FB5; --line:#352D43;
-  --plum:#A57CF2; --plum-soft:#2E2442; --on-plum:#17131F;
-  --green:#5CC98A; --green-soft:#1C3326; --amber:#E7B04A; --amber-soft:#3A2E17; --red:#F07A72; --red-soft:#3D1F1D; color-scheme:dark}
+  --bg:#17151F; --paper:#221F2D; --cream:#2A2535; --ink:#EEEBF5; --muted:#A8A2B8; --line:#383246;
+  --plum:#ADA6D8; --plum-deep:#4A4470; --lav:#8D86B2; --lav-soft:#2E2A42; --on-plum:#17151F;
+  --gold:#E2C48E; --gold-line:#8C7344; --gold-soft:#3A3020; color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 40px}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-top:calc(20px + env(safe-area-inset-top,0px));padding-bottom:calc(40px + env(safe-area-inset-bottom,0px))}
 .wrap{max-width:440px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
 h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.3}
 p{margin:0}
-.brand{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px;letter-spacing:.08em}
-.brand b{color:var(--plum);font-weight:700}
+.brand{color:var(--muted);font-size:13px;letter-spacing:.08em}
+.brand b{color:var(--plum)}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px}
 button{font:inherit;cursor:pointer;border:0}
-button:focus-visible,a:focus-visible{outline:3px solid var(--plum);outline-offset:2px}
-.btn{display:block;width:100%;padding:14px 18px;border-radius:999px;background:var(--plum);color:var(--on-plum);font-weight:700;font-size:17px;text-align:center;text-decoration:none}
+button:focus-visible,a:focus-visible{outline:3px solid var(--gold-line);outline-offset:2px}
+.btn{display:block;width:100%;padding:14px 18px;border-radius:999px;background:var(--plum-deep);color:#fff;font-weight:700;font-size:17px;text-align:center;text-decoration:none}
 .btn.ghost{background:transparent;color:var(--plum);border:1.5px solid var(--plum)}
-.row{display:flex;gap:10px}
-.row>*{flex:1;min-width:0}
+.row{display:flex;gap:10px}.row>*{flex:1;min-width:0}
 
-/* start */
-.hero h1{font-size:34px;font-weight:900}
-.hero .sub{color:var(--muted);margin-top:6px}
-.lights{display:flex;gap:8px;margin:18px 0 4px}
-.lights span{width:14px;height:14px;border-radius:50%}
-.from{border-top:1px solid var(--line);margin-top:18px;padding-top:14px;font-size:14px;color:var(--muted)}
+/* 封面：紫底 + 金色细框，像一份评估报告 */
+.cover{background:linear-gradient(160deg,#8D86B2,#6A6396);color:#fff;border-radius:16px;padding:26px 20px 22px;position:relative;overflow:hidden}
+.cover .t1{font-family:var(--display);font-size:30px;font-weight:900;letter-spacing:.04em;line-height:1.25}
+.cover .script{font-family:var(--script);color:#F4DCB5;font-size:26px;line-height:1;margin-top:4px;opacity:.95}
+.cover .t2{margin-top:14px;font-family:var(--display);font-size:19px;font-weight:600;color:#F4DCB5;border-top:1px solid rgba(244,220,181,.5);padding-top:12px}
+.frame{background:var(--cream);border:6px solid var(--gold-soft);outline:1px solid var(--gold-line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.dimlist{display:flex;flex-direction:column;gap:0;border:1px solid var(--gold-line);border-radius:8px;overflow:hidden;background:var(--paper)}
+.dimlist div{display:flex;align-items:center;gap:12px;padding:9px 12px;border-top:1px solid var(--line);font-size:15px}
+.dimlist div:first-child{border-top:0}
+.dimlist b{font-family:var(--display);color:var(--plum);font-size:17px;width:24px}
+.dimlist span{color:var(--muted);font-size:13px;margin-left:auto}
+.quote{border-left:3px solid var(--gold-line);padding:2px 0 2px 12px;font-size:15px}
+.quote small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.from{font-size:14px;color:var(--muted)}
 .meta{display:flex;gap:16px;font-size:13px;color:var(--muted)}
 
 /* quiz */
 .progress{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
-.progress i{display:block;height:100%;background:var(--plum);transition:width .25s}
+.progress i{display:block;height:100%;background:var(--lav);transition:width .25s}
 .qhead{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
-.qtext{font-family:var(--display);font-size:22px;font-weight:600;line-height:1.45;min-height:3em}
+.qdim{font-size:13px;color:var(--gold);font-weight:700;letter-spacing:.04em}
+.qtext{font-family:var(--display);font-size:21px;font-weight:600;line-height:1.5}
 .opts{display:flex;flex-direction:column;gap:10px}
-.opt{background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:16px;text-align:left;color:var(--ink);font-size:17px}
-.opt[aria-pressed="true"]{border-color:var(--plum);background:var(--plum-soft)}
+.opt{background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:15px 16px;text-align:left;color:var(--ink);font-size:16px}
+.opt[aria-pressed="true"]{border-color:var(--lav);background:var(--lav-soft)}
 .back{background:none;color:var(--muted);font-size:14px;padding:6px 0;align-self:flex-start}
 
-/* result */
+/* 结果报告 */
 #report{background:var(--paper);border-radius:16px;border:1px solid var(--line);overflow:hidden}
-.verdict{padding:22px 20px 18px;display:flex;flex-direction:column;gap:8px}
-.verdict .tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.06em}
-.verdict .tag i{width:12px;height:12px;border-radius:50%;background:currentColor}
-.verdict h2{font-size:28px;font-weight:900}
-.verdict .count{font-size:14px}
-.lv-green .verdict{background:var(--green-soft);color:var(--green)}
-.lv-amber .verdict{background:var(--amber-soft);color:var(--amber)}
-.lv-red .verdict{background:var(--red-soft);color:var(--red)}
-.verdict h2,.verdict p{color:var(--ink)}
-.sec{padding:16px 20px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.rhead{background:linear-gradient(160deg,#8D86B2,#6A6396);color:#fff;padding:22px 20px 18px}
+.rhead .eyebrow{font-size:12px;letter-spacing:.14em;color:#F4DCB5;font-weight:700}
+.rhead h2{font-size:27px;font-weight:900;margin-top:6px}
+.rhead h2 em{font-style:normal;color:#F4DCB5}
+.rhead p{margin-top:8px;font-size:15px;opacity:.95}
+.chart{background:var(--cream);padding:16px 18px;display:flex;flex-direction:column;gap:12px;border-bottom:1px solid var(--line)}
+.radar{display:block;width:100%;max-width:340px;margin:0 auto}
+.bars{display:flex;flex-direction:column;gap:8px}
+.bar{display:grid;grid-template-columns:5.5em 1fr 2.4em;align-items:center;gap:10px;font-size:14px}
+.bar .tr{height:8px;border-radius:4px;background:var(--paper);border:1px solid var(--gold-line);overflow:hidden}
+.bar .tr i{display:block;height:100%;background:var(--lav)}
+.bar.low .tr i{background:var(--gold-line)}
+.bar em{font-style:normal;font-variant-numeric:tabular-nums;text-align:right;color:var(--muted)}
+.bar .st{color:var(--gold)}
+.sec{padding:16px 20px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.sec:first-of-type{border-top:0}
 .sec h3{font-size:17px}
 .sec ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
-.sig{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:10px;background:var(--bg)}
-.sig b{font-size:15px}
-.sig span{font-size:14px;color:var(--muted)}
-.alert{border-radius:10px;padding:12px 14px;font-size:15px;background:var(--red-soft)}
-.alert b{color:var(--red)}
+.step{border-radius:12px;background:var(--bg);padding:14px;display:flex;flex-direction:column;gap:8px}
+.step .hd{display:flex;align-items:baseline;gap:8px}
+.step .no{font-family:var(--display);font-weight:900;color:var(--plum);font-size:18px}
+.step b{font-size:16px}
+.story{background:var(--gold-soft);border-radius:10px;padding:10px 12px;font-size:14px}
+.story b{color:var(--gold);font-size:13px;display:block;margin-bottom:2px}
+.lesson{font-size:14px;color:var(--plum);display:flex;gap:6px;align-items:baseline}
+.lesson::before{content:"▶";font-size:11px}
+.good{display:flex;flex-wrap:wrap;gap:6px}
+.good span{font-size:13px;background:var(--lav-soft);color:var(--plum);border-radius:999px;padding:3px 10px}
 .note{font-size:12px;color:var(--muted)}
 .sign{font-size:13px;color:var(--muted);text-align:right}
 
-/* offer */
-.offer{border:1.5px solid var(--plum);background:var(--paper)}
-.offer .eyebrow{font-size:12px;letter-spacing:.12em;color:var(--plum);font-weight:700}
+/* 课程 */
+.offer{border:1.5px solid var(--gold-line);background:var(--cream)}
+.offer .eyebrow{font-size:12px;letter-spacing:.12em;color:var(--gold);font-weight:700}
 .offer h3{font-size:22px;margin-top:4px}
+.offer .lead{margin-top:8px;font-size:15px}
 .offer ul{margin:10px 0 14px;padding-left:1.2em}
-.price{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
-.price b{font-family:var(--display);font-size:36px;color:var(--plum);font-variant-numeric:tabular-nums}
-.price span{font-size:14px;color:var(--muted)}
+.path{display:flex;gap:6px;margin:4px 0 14px;font-size:13px;text-align:center}
+.path span{flex:1;background:var(--paper);border:1px solid var(--gold-line);border-radius:8px;padding:8px 4px;line-height:1.35}
+.path span b{display:block;font-family:var(--display);color:var(--plum);font-size:15px}
 .wx{display:flex;gap:14px;align-items:center}
-.wx img{width:112px;height:112px;border-radius:8px;background:#fff;padding:6px;flex:none}
-.wx p{font-size:15px}
+.wx img{width:104px;height:104px;border-radius:8px;background:#fff;padding:6px;flex:none}
+.wx p{font-size:14px;color:var(--muted)}
 
-/* save overlay */
 #shot{position:fixed;inset:0;background:rgba(15,10,22,.86);z-index:20;display:flex;flex-direction:column;align-items:center;gap:12px;
   padding:calc(16px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));overflow:auto}
 #shot p{color:#fff;font-size:15px}
 #shot img{max-width:min(420px,100%);border-radius:12px}
 #shot button{background:#fff;color:#211A2E;padding:10px 26px;border-radius:999px;font-weight:700}
-/* price states */
 .pb{display:flex;flex-direction:column;gap:12px}
 .pb .line{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .pb .now{font-family:var(--display);font-size:38px;font-weight:900;color:var(--plum);font-variant-numeric:tabular-nums;line-height:1}
 .pb .was{color:var(--muted);text-decoration:line-through;font-size:16px}
-.pb .chip{font-size:12px;font-weight:700;color:var(--red);background:var(--red-soft);border-radius:6px;padding:2px 8px}
+.pb .chip{font-size:12px;font-weight:700;color:var(--gold);background:var(--gold-soft);border-radius:6px;padding:2px 8px}
 .pb .timer{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
-.pb .timer b{font-variant-numeric:tabular-nums;color:var(--red);font-size:18px;letter-spacing:.04em}
-.pb .unlock{background:none;border:1.5px dashed var(--plum);color:var(--plum);border-radius:12px;padding:12px;font-weight:700}
-/* coupon popup */
+.pb .timer b{font-variant-numeric:tabular-nums;color:var(--plum);font-size:18px;letter-spacing:.04em}
+.pb .unlock{background:var(--paper);border:1.5px dashed var(--plum);color:var(--plum);border-radius:12px;padding:12px;font-weight:700}
 .pop{position:fixed;inset:0;z-index:30;background:rgba(20,12,30,.62);display:flex;align-items:center;justify-content:center;
   padding:calc(16px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
 .ticket{width:min(340px,100%);border-radius:18px;overflow:hidden;background:var(--paper);animation:popin .35s cubic-bezier(.2,1.4,.4,1)}
-.tk-top{background:var(--plum);color:var(--on-plum);text-align:center;padding:22px 16px 26px;position:relative}
+.tk-top{background:linear-gradient(160deg,#8D86B2,#6A6396);color:#fff;text-align:center;padding:22px 16px 26px;position:relative}
 .tk-top::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:16px;
   background:radial-gradient(circle at 8px 8px,var(--paper) 7px,transparent 7.5px) 0 0/16px 16px repeat-x}
-.tk-eyebrow{font-size:13px;letter-spacing:.2em;opacity:.85}
+.tk-eyebrow{font-size:13px;letter-spacing:.2em;color:#F4DCB5}
 .tk-amt{font-family:var(--display);font-size:68px;font-weight:900;line-height:1.1}
 .tk-amt small{font-size:28px;margin-right:2px}
 .tk-name{font-size:15px;opacity:.95}
@@ -125,31 +143,41 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--plum);outline-offse
 .tk-rule{font-size:13px;color:var(--muted)}
 .tk-skip{background:none;color:var(--muted);font-size:14px;padding:4px}
 @keyframes popin{from{transform:scale(.85);opacity:0}to{transform:none;opacity:1}}
-/* sticky countdown */
-#cdBar{position:fixed;left:0;right:0;bottom:0;z-index:15;background:var(--ink);color:var(--bg);
+#cdBar{position:fixed;left:0;right:0;bottom:0;z-index:15;background:#2C2840;color:#fff;
   padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
 .cd-in{max-width:440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .cd-l{font-size:12px;opacity:.75;display:block}
-.cd-t{font-variant-numeric:tabular-nums;font-size:18px;letter-spacing:.04em}
-.cd-go{background:var(--plum);color:var(--on-plum);text-decoration:none;font-weight:700;padding:10px 16px;border-radius:999px;white-space:nowrap}
+.cd-t{font-variant-numeric:tabular-nums;font-size:18px;letter-spacing:.04em;color:#F4DCB5}
+.cd-go{background:#8D86B2;color:#fff;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:999px;white-space:nowrap}
 body.has-bar{padding-bottom:90px}
 @media (prefers-reduced-motion: reduce){.progress i{transition:none}.ticket{animation:none}}
 </style>
-
 </head>
 <body>
 <div class="wrap">
   <div class="brand"><b>寰宇之恋</b> · Love Cloud Bridge</div>
 
   <!-- START -->
-  <section id="start" class="card hero">
-    <h1>他靠得住吗？</h1>
-    <p class="sub">跨国交友防骗自查 · 3 分钟</p>
-    <div class="lights" aria-hidden="true"><span style="background:var(--green)"></span><span style="background:var(--amber)"></span><span style="background:var(--red)"></span></div>
-    <p>想着你正在聊的那个人，回答 15 个问题。做完自动算出绿灯、黄灯还是红灯，并告诉你下一步该怎么做。</p>
-    <p class="from">我是 May，离婚后带着儿子，通过跨国交友在悉尼重新成了家。这一路我见过太多姐妹，不是输给缘分，而是输给骗子。</p>
-    <div class="meta" style="margin:14px 0 16px"><span>15 题</span><span>不用填个人信息</span><span>结果可存图</span></div>
-    <button class="btn" id="go">开始测一测</button>
+  <section id="start" class="wrap" style="gap:14px">
+    <div class="cover">
+      <p class="t1">幸福出海<br>准备度评估</p>
+      <p class="script">Happiness Readiness</p>
+      <p class="t2">你离幸福出海，还差几步？</p>
+    </div>
+    <div class="frame">
+      <p>15 道题，3 分钟。从 5 个方面看看你现在走到哪儿了，告诉你还差几步、每一步怎么走。</p>
+      <div class="dimlist">
+        <div><b>1</b>自我价值<span>相信自己值得</span></div>
+        <div><b>2</b>目标清晰<span>知道要什么</span></div>
+        <div><b>3</b>独立生活<span>经济和情绪有底气</span></div>
+        <div><b>4</b>开放沟通<span>愿意走出去</span></div>
+        <div><b>5</b>识人节奏<span>慢慢来，稳稳走</span></div>
+      </div>
+      <p class="quote">「没理由我要一个人一直孤单嘛！」<small>—— 黎燕珊，62 岁宣布再婚（公开报道）</small></p>
+      <p class="from">我是 May，离婚后带着儿子重新开始，后来和先生在悉尼重新成了家。年龄和过去，从来不是减分项。</p>
+      <div class="meta"><span>15 题</span><span>不用填个人信息</span><span>结果可存图</span></div>
+      <button class="btn" id="go">开始评估</button>
+    </div>
   </section>
 
   <!-- QUIZ -->
@@ -157,7 +185,8 @@ body.has-bar{padding-bottom:90px}
     <div class="wrap">
       <div class="qhead"><span id="qnum">第 1 题</span><span id="qof">1 / 15</span></div>
       <div class="progress"><i id="bar" style="width:0"></i></div>
-      <div class="card" style="display:flex;flex-direction:column;gap:18px">
+      <div class="card" style="display:flex;flex-direction:column;gap:14px">
+        <p class="qdim" id="qdim"></p>
         <p class="qtext" id="qtext"></p>
         <div class="opts" id="opts"></div>
       </div>
@@ -175,29 +204,30 @@ body.has-bar{padding-bottom:90px}
       </div>
 
       <div class="card offer">
-        <div class="eyebrow">想系统学会筛人</div>
+        <div class="eyebrow">剩下的几步，课里一节一节讲</div>
         <h3>《安心出海》8 节视频课</h3>
+        <p class="lead">每节 3 分钟左右，一天一节。学完第 8 节，你手里会有一页属于自己的出海计划。</p>
+        <div class="path"><span><b>看课</b>8 节 + 9 份资料</span><span><b>做计划</b>写下标准、底线和节奏</span><span><b>一对一</b>学完约顾问聊 30 分钟</span></div>
         <ul>
-          <li>不被骗钱：杀猪盘的四个阶段，一眼认出</li>
-          <li>不被骗时间：推进时间线和撤退线</li>
-          <li>出去以后不被困住：见面、孩子和钱的三个月原则</li>
+          <li>先看清自己：标准和底线卡</li>
+          <li>把自己介绍好：10 套中英文自我介绍模板</li>
+          <li>从聊天到见面：视频必问 20 题、见面安全清单</li>
         </ul>
         <div id="priceBox"></div>
       </div>
 
       <div class="card wx">
         <img alt="May 的微信二维码" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACo0lEQVR42u2cQW6lQAxEnwcklo00B8hR+DeYI0VzpLkBHCUHiATLSI1qFu7+kMkqi1lYMgvEp2tVVtmubvNNfOfafvC9K/GJT/x/xR/WrgdgNp/m7x7HCNsMfX1MPsPhkfZBkiQWVVj2+wKLL0iOW5PPiPgmzmMS20tFqysZ9NsXmrqTz9j407Qek+zBIK2cZq978hMZP355U95N2693YxHAkXzGj+/dJB2TDCbBMSNKBYp6pJPPePjT22NgkCfkZQd7MKg10WZmNiefIfVbnuo9TtP2UvEbfFh/Sj5D+yN/XCRp9eenZ/pnNfkMF19VusNtYQQGQaloLfInj3nGN2p8200rgzyqyw6uYpd4Sf3GzM89jLfQfpZz29NK/cbsr+poywoGpwlA27xjlDoKzlHbSx2VfMbVb8vF+73d8gVK/aTu5DNi/dV6NVQ803WptyBn/Y3eX7XQ7oO7IndKz+Ok9EdR8b5DNcleVbFH+bC2VtQytav7yPPfqPsbPSFfrqgZ3p6a0//G9kctFw9qYbwy9a06Z34O21/5cEaRmnQvwfYknfU3tH77roYLVld/9Wy80h/Frb9f/G/5tF3pLXbOX8WN79VGLbdy3PXrFjnrb0B8n885JrUbdYSyA9RR2/wOHDPmTjj5jBhfccwGYOKYMco5sqzN9RqANhtq8hkwvrcJqxlgqG1S1kDt589qPm6XfEbsn28OqPmjvtOxMvQhjqy/Yfuraxanb2INfr7gJrgdMmR8o9Zf8zTMaVD8wBdb9vMqzGj7lXxGxw9ieZu8q2pfMpQ2n2Ovb3m+ENcf+XUaLl2d5o1Xn+RAUJPPoPhr11na20dIWg8zv+ktvy8LrN+zH/geMwaDbPlzGpTdC7NR5EpOPqPhLf+fIfGJD4v/C+EaVDSVrbWxAAAAAElFTkSuQmCC">
-        <p><b>想让 May 帮你看看他？</b><br>截图扫码加我，备注「测评」，送你一份《见面前必问的验证问题》。</p>
+        <p>报名遇到问题，或者想看更多姐妹重新开始的故事，可以扫码加 May 的微信。</p>
       </div>
     </div>
   </section>
 </div>
 
-<!-- coupon popup -->
 <div id="couponPop" class="pop" hidden role="dialog" aria-modal="true" aria-labelledby="cpTitle">
   <div class="ticket">
     <div class="tk-top">
-      <p class="tk-eyebrow">测评专属</p>
+      <p class="tk-eyebrow">评估专属</p>
       <p class="tk-amt"><small>¥</small>100</p>
       <p id="cpTitle" class="tk-name">《安心出海》课程优惠券</p>
     </div>
@@ -210,7 +240,6 @@ body.has-bar{padding-bottom:90px}
   </div>
 </div>
 
-<!-- sticky countdown bar -->
 <div id="cdBar" hidden>
   <div class="cd-in">
     <div><span class="cd-l">优惠券剩余</span><b class="cd-t" id="cdBarT">--:--:--</b></div>
@@ -220,37 +249,58 @@ body.has-bar{padding-bottom:90px}
 
 <div id="shot" hidden>
   <p>长按图片，保存到相册</p>
-  <img id="shotimg" alt="测评结果图">
+  <img id="shotimg" alt="评估结果图">
   <button id="shotclose">关闭</button>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
-const Q=[
- {t:"他的照片像杂志模特，或者用图片搜索能找到同款",w:"照片可能是盗来的。盗图是杀猪盘的第一步。"},
- {t:"他说自己是海外驻军、军医、石油平台工程师、联合国项目人员或远洋船长",w:"这几种身份最常被冒充：常年在外、不能视频、急需用钱，全都有现成理由。"},
- {t:"刚聊没几天，他就急着让你换到 WhatsApp、Telegram 等其他软件",w:"离开交友平台，就没有举报和风控，方便他下手。"},
- {t:"认识不久就说爱你，叫你 wife 或 honey",w:"这是情感轰炸，先让你上头，再让你放下防备。"},
- {t:"他的年龄、城市、婚史等信息，前后说得不一样",w:"可能同时在聊很多人，或者几个人轮流用一个号。"},
- {t:"他总有理由不能视频",w:"不肯视频，就没法确认屏幕那头是不是真人。"},
- {t:"视频过，但总是很短、画面模糊或者他不说话",w:"可能是录好的视频或换脸软件。"},
- {t:"他主动聊起投资、加密货币、外汇，说可以带你一起赚钱",w:"这是杀猪盘真正收网的环节。",money:true},
- {t:"他遇到过急事需要钱：包裹被扣、住院、账户冻结、机票差钱等",w:"最典型的要钱剧本。真心的人不会让刚认识的你掏钱。",money:true},
- {t:"他让你提供验证码、证件照片，或者帮他收款、转款",w:"可能会盗用你的账户，或者让你帮他洗钱，会连累你自己。",money:true},
- {t:"你提出疑问时，他用愧疚或生气回应，比如「你不信我就是不爱我」",w:"这是情感操控，让你不敢再问。"},
- {t:"说好要见面，却一再推迟",w:"真心的人会想办法推进，而不是一直找理由。"},
- {t:"认识超过一个月，他还没说过具体哪个月来见你、谁来、谁付钱",w:"没有具体计划的「以后见面」，可能是在拖你的时间。",time:true},
- {t:"认识超过三个月，你们还没有见过面",w:"时间越长，你投入越多，越难抽身。",time:true},
- {t:"你有没有给他转过钱，或者帮他买过东西？",opts:["没有","有"],last:true}
+/* 5 个方面，每个 3 题；选项 2/1/0 分；一个方面 4 分以上（满分 6）算「这一步已经走好」 */
+const D=[
+ {name:"自我价值",sub:"相信自己值得",
+  do:"这周为自己做一件开心的小事，不为孩子、不为别人。再写下你身上 3 个被人夸过的地方。",
+  lesson:"第 1 节《换个赛道》、第 8 节《你自带光芒》",
+  story:{who:"杨紫琼",txt:"年轻时有过一段婚姻。41 岁认识了现在的伴侣，两人相伴 19 年，60 岁那年在日内瓦办了婚礼。"},
+  good:"你不觉得过去是减分项，这是最难也最重要的一步。"},
+ {name:"目标清晰",sub:"知道要什么",
+  do:"拿一张纸，写下下一段感情「少一条都不行」的 3–4 条。写下来，比聊得开心更重要。",
+  lesson:"第 2 节《先看清自己》+ 标准和底线卡",
+  story:{who:"May 自己",txt:"开始之前我先给自己写了四条：单身、无孩、情绪稳定、有责任心，少一条都不行。后来遇到的先生，四条都做到了。"},
+  good:"你心里有清楚的标准，不容易被一时的心动带偏。"},
+ {name:"独立生活",sub:"经济和情绪有底气",
+  do:"先把能自己掌控的事理顺：收入、孩子的安排、自己的情绪。日子稳了，心才不慌。",
+  lesson:"第 7 节《见面、孩子和钱：三个月原则》",
+  story:{who:"黎燕珊",txt:"离婚后一个人把一儿一女带大，已经当了外婆。62 岁说明年再婚，儿女都没意见。"},
+  good:"你的生活有底气，遇到对的人时可以从容地开始。"},
+ {name:"开放沟通",sub:"愿意走出去",
+  do:"每天花 10 分钟学几句日常英语，或者看看别的国家的人怎么谈恋爱、过日子。",
+  lesson:"第 3 节《一份吸引真心人的个人资料》+ 10 套中英文自我介绍",
+  story:{who:"林志玲",txt:"44 岁步入婚姻，对方是日本歌手 AKIRA。两人语言不太通，他说正因为这样，说话反而更直接、更真诚。"},
+  good:"你对外面的世界是好奇的，这让更多的可能性能走进来。"},
+ {name:"识人节奏",sub:"慢慢来，稳稳走",
+  do:"给自己定个节奏：先多视频，几个月内有计划地见一面；见面之前，钱的事一律不碰。",
+  lesson:"第 4–6 节：第一道筛子、视频验证和推进时间线、守住钱的红线",
+  story:{who:"黎燕珊",txt:"再婚的对象是认识 20 多年的朋友，两年前才慢慢变成恋人。婚期定在两人第一次约会的那天。"},
+  good:"你懂得慢下来看人，这是对自己最好的保护。"}
 ];
-const LV={
- green:{name:"绿灯",title:"可以继续了解他",cls:"lv-green",
-   tips:["底线不变：见面之前不转账、不投资、不给验证码和证件","继续用视频确认他是真人，留意说法前后是否一致","给关系定一个时间点，比如三个月内见面"]},
- amber:{name:"黄灯",title:"放慢节奏，先验证",cls:"lv-amber",
-   tips:["用图片搜索查一下他的照片","临时约一次视频，看他是配合还是找理由","先别投入更多感情，观察你提出疑问时他的反应"]},
- red:{name:"红灯",title:"暂停投入，钱的事一律不碰",cls:"lv-red",
-   tips:["不转账、不投资、不借钱、不帮他收款","把聊天记录和他的资料截图保存好","找一个信得过的人，把情况讲给她听"]}
-};
+const Q=[
+ {d:0,t:"想到「重新开始一段感情」，你心里的第一反应是？",o:[["挺期待的",2],["想，但有点怕",1],["算了吧，都这个年纪了",0]]},
+ {d:0,t:"有人说「离过婚、带着孩子，就不好找了」，你怎么看？",o:[["我也有点这么觉得",0],["不认同，过去不是减分项",2],["嘴上不认，心里有点信",1]]},
+ {d:0,t:"过去一年，你有没有专门为自己做过一件开心的事？（学东西、旅行、打扮自己都算）",o:[["有，还不止一件",2],["偶尔有",1],["几乎都在为别人忙",0]]},
+ {d:1,t:"下一段感情你想要什么样的人，能说出具体几条吗？",o:[["没想过，看缘分",0],["大概有个感觉",1],["能说出 3 条以上",2]]},
+ {d:1,t:"有没有哪几条，是「少一条都不行」的？",o:[["有，很清楚",2],["有一点，但遇到心动的可能会让步",1],["没有",0]]},
+ {d:1,t:"对方条件很好，但有一条和你的底线冲突，你会？",o:[["先在一起再说",0],["放下，继续等对的人",2],["再处处看",1]]},
+ {d:2,t:"你现在的收入，能养活自己（和孩子）吗？",o:[["能，还有一些积蓄",2],["刚好够",1],["比较吃力",0]]},
+ {d:2,t:"如果你有孩子：孩子对你开始新感情是什么态度？（没有孩子请选第一项）",o:[["没有孩子 / 孩子支持",2],["还没聊过",1],["孩子比较抵触",0]]},
+ {d:2,t:"最近半年，你的心情大部分时候是？",o:[["起起伏伏",1],["经常很低落",0],["挺稳的",2]]},
+ {d:3,t:"和外国人简单聊几句（问好、介绍自己），你可以吗？",o:[["没问题",2],["借助翻译能聊",1],["完全不敢",0]]},
+ {d:3,t:"想到将来可能换一个国家生活，你的感觉是？",o:[["没想过离开",0],["期待，愿意去了解",2],["有点心动，也有点怕",1]]},
+ {d:3,t:"你了解过别的国家的人怎么谈恋爱、过日子吗？",o:[["看过不少",2],["偶尔刷到",1],["没怎么了解",0]]},
+ {d:4,t:"遇到一个聊得很好的人，你觉得什么时候见面合适？",o:[["感觉对了，马上飞过去",1],["先多视频，几个月内有计划地见一面",2],["不着急，线上聊多久都行",0]]},
+ {d:4,t:"认识不久，对方就说爱你、想和你结婚，你会？",o:[["很感动，马上答应",0],["有点上头",1],["开心，但再看看他怎么做",2]]},
+ {d:4,t:"感情里遇到和钱有关的事（借钱、一起投资），你的原则是？",o:[["见面之前一律不碰",2],["看情况",1],["相信他就可以",0]]}
+];
+const PASS=4, MAX=6;
 const $=id=>document.getElementById(id);
 let ans=[],i=0;
 function show(id){["start","quiz","result"].forEach(s=>$(s).hidden=s!==id);window.scrollTo(0,0)}
@@ -258,29 +308,57 @@ function render(){
   const q=Q[i];
   $("qnum").textContent=`第 ${i+1} 题`;$("qof").textContent=`${i+1} / ${Q.length}`;
   $("bar").style.width=(i/Q.length*100)+"%";
+  $("qdim").textContent=`${q.d+1} · ${D[q.d].name}`;
   $("qtext").textContent=q.t;
   const o=$("opts");o.innerHTML="";
-  (q.opts||["是","否"]).forEach((label,k)=>{
-    const b=document.createElement("button");b.className="opt";b.id="opt"+k;b.textContent=label;
-    const val=q.opts?k===1:k===0;
-    b.setAttribute("aria-pressed",ans[i]===val?"true":"false");
-    b.onclick=()=>{ans[i]=val;b.setAttribute("aria-pressed","true");setTimeout(()=>{if(i<Q.length-1){i++;render()}else finish()},160)};
+  q.o.forEach(([label],k)=>{
+    const b=document.createElement("button");b.className="opt";b.textContent=label;
+    b.setAttribute("aria-pressed",ans[i]===k?"true":"false");
+    b.onclick=()=>{ans[i]=k;b.setAttribute("aria-pressed","true");setTimeout(()=>{if(i<Q.length-1){i++;render()}else finish()},160)};
     o.appendChild(b)});
   $("prev").hidden=i===0;
 }
+/* 五边形雷达图 */
+function radar(sc){
+  const cx=140,cy=128,R=88,n=5;
+  const pt=(k,r)=>{const a=-Math.PI/2+k*2*Math.PI/n;return [cx+r*Math.cos(a),cy+r*Math.sin(a)]};
+  const poly=r=>D.map((_,k)=>pt(k,r).map(v=>v.toFixed(1)).join(",")).join(" ");
+  let s=`<svg class="radar" viewBox="-45 0 370 250" role="img" aria-label="五个方面得分雷达图">`;
+  [1,.66,.33].forEach(f=>{s+=`<polygon points="${poly(R*f)}" fill="none" stroke="var(--gold-line)" stroke-width="1"/>`});
+  D.forEach((_,k)=>{const [x,y]=pt(k,R);s+=`<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="var(--gold-line)" stroke-width="1"/>`});
+  const vals=D.map((_,k)=>pt(k,R*Math.max(sc[k],.4)/MAX).map(v=>v.toFixed(1)).join(",")).join(" ");
+  s+=`<polygon points="${vals}" fill="rgba(141,134,178,.38)" stroke="#6A6396" stroke-width="2"/>`;
+  D.forEach((d,k)=>{const [x,y]=pt(k,R+22);const anc=Math.abs(x-cx)<5?"middle":x>cx?"start":"end";
+    s+=`<text x="${x.toFixed(1)}" y="${(y+5).toFixed(1)}" text-anchor="${anc}" font-size="13" fill="currentColor">${d.name}</text>`});
+  return s+`</svg>`;
+}
 function finish(){
-  const hits=Q.map((q,k)=>({q,k,yes:ans[k]})).filter(x=>!x.q.last&&x.yes);
-  const n=hits.length, money=hits.some(x=>x.q.money), time=hits.some(x=>x.q.time), paid=ans[Q.length-1];
-  const key=(n>=4||money||paid)?"red":n>=2?"amber":"green";
-  const L=LV[key];
-  let why=`前 14 题里，你选了 <b>${n}</b> 个「是」`;
-  if(key==="red"&&n<4) why+=money?"，其中有和钱有关的信号，直接按红灯处理":"，但你已经转过钱，直接按红灯处理";
-  let h=`<div class="${L.cls}"><div class="verdict"><span class="tag"><i></i>${L.name}</span><h2>${L.title}</h2><p class="count">${why}</p></div>`;
-  if(paid) h+=`<div class="sec"><div class="alert"><b>已经转过钱，请马上做三件事：</b>停止再转任何一笔；保存好聊天和转账记录；联系银行，并拨打反诈热线 96110。被骗不是你的错，止损最重要。有人说能帮你追回损失、但要先交费的，几乎都是第二次诈骗。</div></div>`;
-  h+=`<div class="sec"><h3>接下来这样做</h3><ul>${L.tips.map(t=>`<li>${t}</li>`).join("")}</ul></div>`;
-  if(n) h+=`<div class="sec"><h3>你选了「是」的信号</h3>${hits.map(x=>`<div class="sig"><b>${x.k+1}. ${x.q.t}</b><span>${x.q.w}</span></div>`).join("")}</div>`;
-  if(time) h+=`<div class="sec"><h3>小心被拖时间</h3><p>他可能不是在骗你的钱，而是在拖你的时间。给他一个明确的时间点，比如这个月内定下见面日期。做不到，就别把心思都押在他一个人身上。</p></div>`;
-  h+=`<div class="sec"><p class="note">本测评只是风险提示，不能证明对方一定是或不是骗子。</p><p class="sign">—— May · 寰宇之恋</p></div></div>`;
+  const sc=D.map(()=>0);
+  Q.forEach((q,k)=>{sc[q.d]+=q.o[ans[k]][1]});
+  const ok=sc.map(s=>s>=PASS), left=ok.filter(x=>!x).length;
+  const total=Math.round(sc.reduce((a,b)=>a+b,0)/(MAX*D.length)*100);
+  let title,lead;
+  if(left===0){title=`你已经站在<em>出发点</em>了`;lead="5 个方面你都准备得不错。接下来，就是保持这份清醒和期待。"}
+  else if(left<=2){title=`你离幸福出海<br>只差 <em>${left} 步</em>`;lead="大部分路你已经走好了。把下面这几步补上，就可以安心出发。"}
+  else{title=`你离幸福出海<br>还差 <em>${left} 步</em>`;lead="别着急，这不是坏消息。很多重新开始的人，都是先把自己安顿好，再慢慢让一个人走进来。"}
+  let h=`<div class="rhead"><span class="eyebrow">幸福出海准备度 · ${total} 分</span><h2>${title}</h2><p>${lead}</p></div>`;
+  h+=`<div class="chart">${radar(sc)}<div class="bars">${D.map((d,k)=>`<div class="bar ${ok[k]?"":"low"}"><span>${d.name}</span><span class="tr"><i style="width:${Math.round(sc[k]/MAX*100)}%"></i></span><em class="${ok[k]?"":"st"}">${ok[k]?"✓":"待补"}</em></div>`).join("")}</div></div>`;
+  const todo=D.map((d,k)=>({d,k})).filter(x=>!ok[x.k]);
+  if(todo.length){
+    h+=`<div class="sec"><h3>接下来这几步，这样走</h3>${todo.map((x,n)=>`<div class="step">
+      <div class="hd"><span class="no">${n+1}</span><b>${x.d.name}</b><span class="note">${x.d.sub}</span></div>
+      <p>${x.d.do}</p>
+      <p class="lesson">课里怎么学：${x.d.lesson}</p>
+      <div class="story"><b>走过这一步的人 · ${x.d.story.who}</b>${x.d.story.txt}</div></div>`).join("")}</div>`;
+  }
+  const done=D.filter((d,k)=>ok[k]);
+  if(done.length){
+    h+=`<div class="sec"><h3>你已经走好的</h3><div class="good">${done.map(d=>`<span>✓ ${d.name}</span>`).join("")}</div>
+      <ul>${done.map(d=>`<li>${d.good}</li>`).join("")}</ul></div>`;
+  }
+  if(left===0){const s=D[0].story;h+=`<div class="sec"><div class="story"><b>送你一个故事 · ${s.who}</b>${s.txt}</div></div>`}
+  h+=`<div class="sec"><p>年龄和过去，从来不是减分项。先看清，再动心，什么时候都不算晚。</p>
+    <p class="note">名人故事来自公开报道。本评估只是帮你看看自己的准备情况，不是专业诊断。</p><p class="sign">—— May · 寰宇之恋</p></div>`;
   $("report").innerHTML=h;$("bar").style.width="100%";show("result");
 }
 $("go").onclick=()=>{ans=[];i=0;render();show("quiz")};
@@ -297,47 +375,45 @@ $("save").onclick=async()=>{
 };
 $("shotclose").onclick=()=>{$("shot").hidden=true};
 
-/* ---------- coupon ---------- */
-const COUPON_HOURS=24;            // 优惠券有效时长（小时）
-const LIST_PRICE=199, OFF=100;
+/* ---------- 优惠券（和旧版一样） ---------- */
+const COUPON_HOURS=24, LIST_PRICE=199, OFF=100;
 const FORM_99="https://jsj.top/f/zOHRtl";
-const FORM_199="https://jsj.top/f/F9B7Qx"; // 过期后 ¥199 的报名链接
+const FORM_199="https://jsj.top/f/F9B7Qx";
 const KEY="axch_coupon_claimed_at";
 $("cpHours").textContent=COUPON_HOURS;
 let claimedAt=null, popShown=false, tick=null;
 try{const v=localStorage.getItem(KEY);if(v)claimedAt=+v}catch(e){}
-const left=()=>claimedAt?claimedAt+COUPON_HOURS*3600e3-Date.now():0;
+const leftMs=()=>claimedAt?claimedAt+COUPON_HOURS*3600e3-Date.now():0;
 const fmt=ms=>{const s=Math.max(0,Math.floor(ms/1000));const p=n=>String(n).padStart(2,"0");return `${p(Math.floor(s/3600))}:${p(Math.floor(s%3600/60))}:${p(s%60)}`};
-function state(){return !claimedAt?"none":left()>0?"active":"expired"}
+function state(){return !claimedAt?"none":leftMs()>0?"active":"expired"}
 function drawPrice(){
   const st=state(), box=$("priceBox");
   if(st==="none"){
     box.innerHTML=`<div class="pb"><div class="line"><span class="now">¥${LIST_PRICE}</span><span class="note">课程价</span></div>
-      <button class="unlock" id="openCoupon">🎟 领取测评专属 ¥${OFF} 优惠券</button></div>`;
+      <button class="unlock" id="openCoupon">🎟 领取评估专属 ¥${OFF} 优惠券</button></div>`;
     $("openCoupon").onclick=openPop;
   }else if(st==="active"){
     box.innerHTML=`<div class="pb"><div class="line"><span class="now">¥${LIST_PRICE-OFF}</span><span class="was">¥${LIST_PRICE}</span><span class="chip">已用券 -¥${OFF}</span></div>
-      <div class="timer">优惠券剩余 <b id="cdCard">${fmt(left())}</b></div>
+      <div class="timer">优惠券剩余 <b id="cdCard">${fmt(leftMs())}</b></div>
       <a class="btn" href="${FORM_99}" target="_blank" rel="noopener">用券 ¥${LIST_PRICE-OFF} 报名</a></div>`;
   }else{
-    box.innerHTML=`<div class="pb"><div class="line"><span class="now">¥${LIST_PRICE}</span><span class="chip">优惠券已过期</span></div>`+
-      (FORM_199?`<a class="btn" href="${FORM_199}" target="_blank" rel="noopener">报名 ¥${LIST_PRICE}</a>`:`<p class="note">想报名可以加下面的微信，问问 May 有没有新的优惠。</p>`)+`</div>`;
+    box.innerHTML=`<div class="pb"><div class="line"><span class="now">¥${LIST_PRICE}</span><span class="chip">优惠券已过期</span></div>
+      <a class="btn" href="${FORM_199}" target="_blank" rel="noopener">报名 ¥${LIST_PRICE}</a></div>`;
   }
   const bar=state()==="active"&&!$("result").hidden;
   $("cdBar").hidden=!bar;document.body.classList.toggle("has-bar",bar);
 }
 function startTick(){clearInterval(tick);tick=setInterval(()=>{
   if(state()!=="active"){clearInterval(tick);drawPrice();return}
-  const t=fmt(left());const a=$("cdCard");if(a)a.textContent=t;$("cdBarT").textContent=t;},1000)}
+  const t=fmt(leftMs());const a=$("cdCard");if(a)a.textContent=t;$("cdBarT").textContent=t;},1000)}
 function openPop(){popShown=true;$("couponPop").hidden=false;$("claim").focus()}
 $("claim").onclick=()=>{claimedAt=Date.now();try{localStorage.setItem(KEY,String(claimedAt))}catch(e){}
-  $("couponPop").hidden=true;drawPrice();startTick();$("cdBarT").textContent=fmt(left())};
+  $("couponPop").hidden=true;drawPrice();startTick();$("cdBarT").textContent=fmt(leftMs())};
 $("skip").onclick=()=>{$("couponPop").hidden=true};
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!popShown&&state()==="none"&&!$("result").hidden)setTimeout(openPop,500)})},{threshold:.4});
 io.observe(document.querySelector(".offer"));
 const _finish=finish;finish=function(){_finish();drawPrice();if(state()==="active")startTick()};
 const _again=$("again").onclick;$("again").onclick=()=>{_again();$("cdBar").hidden=true;document.body.classList.remove("has-bar")};
 </script>
-
 </body>
 </html>
